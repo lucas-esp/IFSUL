@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+		<style type="text/css">
+			body{margin:0; background-color:#D90000; color:#FFFFFF; font-size:16px;}
+			#fonte{text-align:right;}
+			#cor{text-align:right;}
+			#tudo{margin:0 auto; width:800px;}
+			#menu{width:200px; float:left;}
+			#centro{width:600px; float:right;}
+			h1{text-align:center;color:#FFC200}
+			span{cursor:pointer;}
+		</style>
+
+	
+	</head>
+	<body>
+		<div id="tudo">
+			<div id="fonte">Fonte: <span id="aumentarFonte">A+</span> <span id="normalFonte">A</span> <span id="diminuirFonte">A-</span></div>
+			<div id="cor">Alto Contraste: <span id="altoContrasteOn">On</span> <span id="altoContrasteOff">Off</span></div>
+			<h1>IFnews</h1>
+			<div id="menu">
+				<span>Inicio<span><br>
+				<span id="noticias">Noticias</span><br>
+				<div id="not">
+				Hoje<br>
+				Amanha<br>
+				Navegar<br>
+				</div>
+				<span id="parceiros">Parceiros</span><br>
+				<div id="par">
+				IFSUL<br>
+				BIG<br>
+				SÃO JOÃO<br>
+				</div>
+			</div>
+			<div id="centro">
+				<h2>Show do Detonautas agita a cidade</h2>
+				<img src="detonautas.jpg" width="400">
+				<p>Show do detonautas ocorreu na ultima quarta feira e balançou livramento.</p>
+				<a href="#" style="color:white;" id="link">Veja mais</a>
+			</div>
+		</div>
+		<script type="text/javascript">
+			document.querySelector("#aumentarFonte").onclick = function(){
+				document.querySelector("body").style.fontSize="22px";
+			}	
+			document.querySelector("#normalFonte").onclick = function(){
+				document.querySelector("body").style.fontSize="18px";
+			}
+			document.querySelector("#diminuirFonte").onclick = function(){
+				document.querySelector("body").style.fontSize="13px";
+			}
+			document.querySelector("#altoContrasteOn").onclick = function(){
+				document.querySelector("body").style.backgroundColor="gray";
+				document.querySelector("body").style.color="orange";
+				document.querySelector("a").style.color="orange";
+			}
+			document.querySelector("#altoContrasteOff").onclick = function(){
+				document.querySelector("body").style.cssText="background-color:#D90000; color: white;";
+				document.querySelector("a").style.color="white";
+			}
+			
+			document.querySelector("#link").onmouseover = function(){
+				document.querySelector("a").style.textDecoration = "none";
+			}			
+			document.querySelector("#link").onmouseout = function(){
+				document.querySelector("a").style.textDecoration = "underline";
+			}
+			
+		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#not").hide();
+				$("#par").hide();
+				$("#noticias").click(function(){
+					$("#not").slideToggle(1000);
+				});	
+				$("#parceiros").click(function(){
+					$("#par").slideToggle(1000);
+				});	
+			});
+			</script>	
+	</body>
+</html>

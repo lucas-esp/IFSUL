@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body align="center">
+		<h1>Treinador</h1>
+		Jogador:<input type="text" id="texto"/>
+		<br />
+		<br />
+		<button id="goleiro">Goleiro</button>
+		<button>Zagueiro</button>
+		<button>Ala Esquerda</button>
+		<button>Ala Direta</button>
+		<button>Atacante</button>
+		
+		<table border="1" style="width:1000px; background-color:yellow; height:400px; text-align:center" align="center">
+			<thead>
+				<th colspan="4">Timeco</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td colspan="4" id="tdGoleiro">Goleiro</td>
+				</tr>
+				<tr>
+					<td>Ala Esquerda</td>
+					<td>Zagueiro</td>
+				</tr>
+				<tr>
+					<td>Atacante</td>
+					<td>Ala Direita</td>
+				</tr>
+			</tbody>
+		</table>
+		Regras: Jogador informado deve ser colocado na sua posição escolhida pelos botões.
+		<script type="text/javascript">
+			document.querySelector("#goleiro").onclick = function(){
+				document.querySelector("#tdGoleiro").textContent=document.querySelector("#texto").value;
+			}
+		</script>
+	</body>
+</html>

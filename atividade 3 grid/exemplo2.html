@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+   <style>
+   .wrapper {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-row-gap:8px;
+   }
+
+   .div1, .div10{
+   grid-column-start: 1;
+   grid-column-end: 4;
+   background-color:black;
+   }
+   .div2, .div4, .div6, .div8{
+   background-color:yellow;
+   grid-column-start: 1;
+   grid-column-end: 3;
+   }
+   .div3, .div5, .div7, .div9{
+   background-color:red;
+   }
+
+   </style>
+ </head>
+ <body>
+
+ <div class="wrapper">
+ <div class="div1">1</div>
+ <div class="div2">teste1</div>
+ <div class="div3">3</div>
+ <div class="div4">teste2</div>
+ <div class="div5">5</div>
+ <div class="div6">teste3</div>
+ <div class="div7">7</div>
+ <div class="div8">teste4</div>
+ <div class="div9">9</div>
+ <div class="div div10">10</div>
+ </div>
+
+ </body>
+ </html>

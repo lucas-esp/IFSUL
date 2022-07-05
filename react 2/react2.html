@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	</head>
+	<body>
+		<div id="root"></div>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+		<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+		<script type="text/babel">
+			
+			class MyForm extends React.Component {
+				constructor(props) {
+					super(props);
+					this.state = { username: 'Lucas' };
+					this.state = { password: 'lucas13' };
+				}
+
+				formSubmit = (event) => {
+					event.preventDefault();
+					console.log("UserName: "+this.state.username);
+					console.log("password: "+this.state.password);
+				}
+
+				changeName = (event) => {
+					this.setState({username: event.target.value});
+				}
+				changePassword = (event) => {
+					this.setState({password: event.target.value});
+				}
+
+				render() {
+					return (
+						<form onSubmit={this.formSubmit}>
+						
+						<p>Enter your name:</p>
+						<input
+							type='text'
+							onChange={this.changeName}
+						/>
+						<p>Enter your password:</p>
+						<input
+							type='text'
+							onChange={this.changePassword}
+						/>
+
+						<input type="submit" value="submit" />
+
+						</form>
+					);
+				}
+			}
+
+			ReactDOM.render(<MyForm />, document.getElementById('root'));
+		</script>
+		
+	</body>
+</html>

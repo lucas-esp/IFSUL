@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+		<style type="text/css">
+	    body{margin:0; background-color:#20232A; color:#FFFFFF; font-size:16px;}
+		.fonte{text-align:right;}
+		.cor{text-align:right;}
+		.tudo{margin:0 auto; width:800px;}
+		.menu{width:200px; float:left;}
+		.centro{width:600px; float:right;}
+		h1{text-align:center;color:#FFC200}
+		span{cursor:pointer;}
+		a{color:white}
+		</style>
+	</head>
+	<body>
+		<div id="root"></div>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+		<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+		<script type="text/babel">
+			
+			function MenuTopo() {
+				return (
+					<div>
+						<div class="fonte">
+							Fonte: <span>A+</span>
+							<span>A</span> <span>A-</span>
+						</div>	
+						<div class="cor">
+							Alto Contraste: 
+							<span>On</span>
+							<span>Off</span>
+						</div>	
+						<h1>IFNews</h1>
+					</div>
+				);
+			}
+			
+			function Menu() {
+				return (
+					<div class="menu">
+					<p>Inicio</p>
+					<p>Noticias</p>
+					<p>Parceiros</p>						
+					</div>
+				);
+			}
+
+			function Image(props) {
+				return <img src={props.path} />
+			}
+
+			function Conteudo() {
+				return (
+					<div class="centro">
+					<h2>Show do SPC agita a cidade</h2>
+					<Image path={'spc.jpg'}/>
+					<p>Show ocorreu nesse ultimo fim de semana e balancou livramento</p>
+					<a href="#" class="link">Veja mais</a>
+					</div>
+				);
+			}
+
+			const element = (
+				<div id="tudo" class="tudo">
+				<MenuTopo/>
+				<Menu/>
+				<Conteudo/>
+				</div>
+			);
+
+			ReactDOM.render(
+				element,
+				document.getElementById('root')
+			);
+		</script>
+		
+	</body>
+</html>
